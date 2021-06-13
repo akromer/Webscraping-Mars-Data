@@ -13,22 +13,11 @@ import pymongo
 import requests
 from flask import Flask, render_template, redirect
 
-
-# In[2]:
-
-
-# Set up Splinter
-def browser_start():
+# Visit site
+def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
-
-# In[3]:
-
-
-# Visit site
-def scrape():
-    browser = browser_start()
     mars_dict={}
 
     news_url = "https://redplanetscience.com/"
